@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  font-size: 16px;
+  --light-gray: #fafafa;
+  --white-color: #fff;
+  --primary-color: #3a6cf3;
+  --secondary-color: #601cfc;
+}
+
+*,
+*::before,
+*::after {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+.header {
+  background-color: var(--light-gray);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 200px;
+}
+
+.header__logo {
+  text-decoration: none;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.header__navigation a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 1.875rem;
+}
+
+.header__navigation a:hover {
+  color: var(--secondary-color);
+}
+
+.hero {
+  width: 100%;
+  padding: 6.25em 200px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero__left h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.hero__left h2 span {
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.hero__left h3 {
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.hero__left__button {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.9375em;
+  letter-spacing: 1px;
+  border-radius: 1rem;
+  margin-bottom: 30px;
+  transition: 0.7s all ease-in-out;
+}
+
+.hero__left__button:hover {
+  transform: scale(1.1);
+}
+
+.hero__left__social-icons a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.7em;
+  padding-right: 30px;
+}
+
+.hero__right img {
+  width: 100%;
+  border-radius: 50%;
+  transition: 0.8s all ease-in-out;
+}
+
+.hero__right img:hover {
+  transform: scale(1.2);
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.services {
+  margin: 0 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.service__card {
+  background-color: var(--white-color);
+  width: 21.25em;
+  box-shadow: 0 5px 25px rgba(1, 1, 1, 20%);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 35px;
+  text-align: center;
+  transition: 0.3s all ease-in-out;
+}
+
+.service__card:hover {
+  background-color: var(--white-color);
+  width: 21.25em;
+  box-shadow: 0 5px 25px rgba(1, 1, 1, 20%);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 25px;
+  transform: scale(1.1);
+}
+
+.service__card__icon {
+  color: var(--primary-color);
+  font-size: 8em;
+}
+
+.service__card__iformation h3 {
+  color: var(--primary-color);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
