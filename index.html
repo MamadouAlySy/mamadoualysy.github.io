@@ -1,101 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mamadou Aly Sy</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
-      integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="header" id="header">
-      <a href="#header" class="header__logo">Mamadou Aly Sy</a>
-      <nav class="header__navigation">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <!-- Tailwind CSS CDN -->
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(to right, #4f46e5, #8b5cf6);
+        }
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #e5e7eb;
+            top: 0;
+            bottom: 0;
+            left: 12px;
+        }
+        .timeline-item:last-child::before {
+            height: 50%;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4f46e5;
+            top: 6px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">Mamadou Aly Sy</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-colors">Acceuil</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors">A Propos</a>
+                    <a href="#skills" class="text-gray-700 hover:text-indigo-600 transition-colors">Competences</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition-colors">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-indigo-600 transition-colors">Experiences</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-indigo-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Acceuil</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">A Propos</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Competences</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Projects</a>
+                <a href="#experience" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Experiences</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <section class="hero">
-      <section class="hero__left">
-        <h2>
-          Bonjour, je m'appelle Mamadou Aly Sy<br />
-          <span>Développeur web back-end</span>
-        </h2>
-        <h3>Je construis des projets incroyables</h3>
-        <a href="#projects" class="hero__left__button">Voir mon travail</a>
-        <section class="hero__left__social-icons">
-          <a href="https://github.com/MamadouAlySy" target="_blank"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/mamadou-aly-sy-78a191214/"
-            target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://www.instagram.com/mamadoualysy/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </section>
-      </section>
-      <section class="hero__right">
-        <img src="80212571.jpg" alt="" />
-      </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="md:w-2/3">
+                <p class="text-indigo-200 text-lg mb-4">Hello, I'm</p>
+                <h1 class="text-5xl sm:text-6xl font-bold mb-4">Mamadou Aly Sy</h1>
+                <h2 class="text-3xl sm:text-4xl font-semibold mb-6">Développeur Full Stack</h2>
+                <p class="text-xl mb-8 text-indigo-100">Je construis des expériences numériques exceptionnelles en mettant l'accent sur la performance et la satisfaction des utilisateurs.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-indigo-600 font-medium py-3 px-8 rounded-lg hover:bg-opacity-90 transition-colors">Embauchez-moi</a>
+                    <a href="#projects" class="border-2 border-white text-white font-medium py-3 px-8 rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors">Voir mon travail</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="services">
-      <h2 class="section-title">Services</h2>
-      <section class="services">
-        <section class="service__card">
-          <section class="service__card__icon">
-            <i class="fas fa-edit"></i>
-          </section>
-          <section class="service__card__iformation">
-            <h3>Développement Web</h3>
-            <p>
-              Création de sites Web personnalisés et réactifs qui donnent la
-              priorité à la conception, aux fonctionnalités et aux performances.
-              Donnons vie à votre vision avec un site qui captive et engage les
-              utilisateurs.
-            </p>
-          </section>
-        </section>
-        <section class="service__card">
-          <section class="service__card__icon">
-            <i class="fas fa-camera-retro"></i>
-          </section>
-          <section class="service__card__iformation">
-            <h3>Photographie</h3>
-            <p>
-              Capture de moments authentiques grâce à des images créatives et
-              professionnelles. Des portraits aux événements, je donne vie aux
-              histoires avec des photos qui résonnent et laissent une impression
-              durable.
-            </p>
-          </section>
-        </section>
-        <section class="service__card">
-          <section class="service__card__icon">
-            <i class="fas fa-video"></i>
-          </section>
-          <section class="service__card__iformation">
-            <h3>Montage vidéo</h3>
-            <p>
-              Transformation d'images brutes en histoires captivantes. Du
-              contenu promotionnel aux moments forts de l'événement, vidéos
-              soignées avec des transitions, un étalonnage des couleurs et un
-              son fluides pour captiver et engager les spectateurs.
-            </p>
-          </section>
-        </section>
-      </section>
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">A Propos de moi</h2>
+                <div class="mt-2 w-24 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="./80212571.jpg" alt="Profile placeholder" class="rounded-full w-64 h-64 object-cover mx-auto border-4 border-indigo-600 shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">Qui suis-je</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      Je suis un développeur full-stack passionné avec plus de 5 ans d'expérience dans la création d'applications web dynamiques
+                      et d'interfaces utilisateur intuitives. Je suis spécialisé dans les frameworks PHP modernes, le responsive design et la création de systèmes back-end évolutifs.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      Mon objectif est de combiner des solutions technologiques innovantes avec une résolution créative de problèmes
+                      pour offrir des expériences numériques exceptionnelles qui dépassent les attentes des clients.
+                    </p>
+                    <div class="flex space-x-6 mb-8">
+                        <a href="https://github.com/MamadouAlySy" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mamadou-aly-sy-78a191214/" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mamadoualysy" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                    <a href="./cv.pdf" target="_blank" class="inline-block bg-indigo-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">
+                      Télécharger mon CV <i class="fas fa-download ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-  </body>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Mes compétences</h2>
+                <div class="mt-2 w-24 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Développement frontend</h3>
+                    <p class="text-gray-700 mb-4">Créer des interfaces utilisateur réactives et accessibles avec des frameworks modernes.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">HTML5</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">CSS3</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">React</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Bootstrap</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Tailwind</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">Développement backend</h3>
+                    <p class="text-gray-700 mb-4">Création d'applications et d'API côté serveur robustes avec une architecture évolutive.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Node.js</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Express</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">PHP</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Laravel</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Symfony</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">SQL</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="card bg-white p-8 rounded-xl shadow-lg">
+                    <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-900">DevOps et outils</h3>
+                    <p class="text-gray-700 mb-4">Mise en œuvre de pipelines CI/CD et gestion de l'infrastructure de déploiement.p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Git</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Docker</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">AWS</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Bitbucket</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">GitHub Actions</span>
+                        <span class="bg-indigo-100 text-indigo-800 text-sm px-3 py-1 rounded-full">Webpack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Projets en vedette</h2>
+                <div class="mt-2 w-24 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden">
+                        <img src="/api/placeholder/800/600" alt="Project placeholder" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online shopping platform with payment integration and order management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden">
+                        <img src="/api/placeholder/800/600" alt="Project placeholder" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">A collaborative task manager with real-time updates and team organization features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Express</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Socket.io</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-60 overflow-hidden">
+                        <img src="/api/placeholder/800/600" alt="Project placeholder" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Site Web de Mamadou Aly Sy</h3>
+                        <p class="text-gray-600 mb-4">A modern, responsive Mamadou Aly Sy website with smooth animations and optimized performance.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">HTML5</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                            <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-indigo-600 text-white font-medium py-3 px-8 rounded-lg hover:bg-indigo-700 transition-colors">
+                    View All Projects <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Experience</h2>
+                <div class="mt-2 w-24 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+
+                <!-- Timeline item 1 -->
+                <div class="timeline-item pl-10 pb-10">
+                  <div class="timeline-dot"></div>
+                  <div class="bg-white p-6 rounded-xl shadow-md">
+                      <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                          <h3 class="text-xl font-semibold text-gray-900">Développeur Full Stack</h3>
+                          <span class="text-indigo-600 font-medium">2025 — Present</span>
+                      </div>
+                      <h4 class="text-lg text-gray-700 mb-3">2houne</h4>
+                      <p class="text-gray-600">
+                        <ul class="list-disc pl-5">
+                          <p class="text-gray-600">Réalisation d'une application web personalise pour des entreprise.
+                          </p>
+                        </ul>
+                      </p>
+                  </div>
+              </div>
+
+                <!-- Timeline item 1 -->
+                <div class="timeline-item pl-10 pb-10">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Développeur Full Stack</h3>
+                            <span class="text-indigo-600 font-medium">2023 — 2023</span>
+                        </div>
+                        <h4 class="text-lg text-gray-700 mb-3">Raddo Technologies</h4>
+                        <p class="text-gray-600">
+                          <ul class="list-disc pl-5">
+                            <li>Collaboration avec une équipe de développeurs pour créer des applications Web
+                              modernes et réactives en utilisant les meilleures pratiques</li>
+                            <li>Création d'applications Web full-stack structurées sémantiquement</li>
+                            <li>PMéthodologies agiles appliquées comme SCRUM pour la gestion de projet</li>
+                          </ul>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item 2 -->
+                <div class="timeline-item pl-10 pb-10">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Développeur Full Stack</h3>
+                            <span class="text-indigo-600 font-medium">2020 - 2021</span>
+                        </div>
+                        <h4 class="text-lg text-gray-700 mb-3">Bktrans logistique</h4>
+                        <p class="text-gray-600">
+                          Travailler sur une ERP en PHP (Vanilla sans framework)
+                          <ul class="list-disc pl-5">
+                            <li>Collaboration avec une équipe de développeurs pour la maintenance de l'ERP</li>
+                            <li>Création de package PHP pour le fonctionnement interne de l'application</li>
+                            <li>Participation a la révision de la structure de l'application en MVC</li>
+                          </ul>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline item 3 -->
+                <div class="timeline-item pl-10 pb-10">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Développeur backend (Stage)</h3>
+                            <span class="text-indigo-600 font-medium">2019 — 2019</span>
+                        </div>
+                        <h4 class="text-lg text-gray-700 mb-3">BMCI</h4>
+                        <p class="text-gray-600">
+                          Réalisation d'une application de réclamation clientèle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Entrer en contact</h2>
+                <div class="mt-2 w-24 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Vous avez un projet en tête ou souhaitez discuter d'une éventuelle collaboration ? N'hésitez pas à me contacter !</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors">
+                            Send Message <i class="fas fa-paper-plane ml-1"></i>
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Coordonnées</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">Email</p>
+                                    <a href="mailto:hello@example.com" class="text-indigo-600 hover:text-indigo-800 transition-colors">mamadou.aly.sy.dev@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">Phone</p>
+                                    <a href="tel:+1234567890" class="text-indigo-600 hover:text-indigo-800 transition-colors">(+222) 37 76 89 99</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-600">Location</p>
+                                    <p class="text-indigo-600">Sebkha, Nouakchott</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900">Follow Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/MamadouAlySy" class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mamadou-aly-sy-78a191214/" class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://www.instagram.com/mamadoualysy/" class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold">Mamadou Aly Sy</span>
+                    <p class="mt-2 text-gray-400">Construire des expériences numériques exceptionnelles.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </body>
 </html>
